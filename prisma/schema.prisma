@@ -1,0 +1,42 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://aditya:EnterYourPassHere@localhost:5432/postgres"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Sag {
+  id                    Int       @id
+  typeid                Int
+  kategoriid            Int?
+  statusid              Int
+  titel                 String
+  titelkort             String?
+  offentlighedskode     String
+  nummer                String?
+  nummerprefix          String?
+  nummernumerisk        String?
+  nummerpostfix         String?
+  resume                String?
+  afstemningskonklusion String?
+  periodeid             Int
+  afgorelsesresultatkode String?
+  baggrundsmateriale    String?
+  opdateringsdato       DateTime
+  statsbudgetsag        Boolean
+  begrundelse           String?
+  paragrafnummer        String?
+  paragraf              String?
+  afgorelsesdato        DateTime?
+  afgorelse             String?
+  radsmodedato          DateTime?
+  lovnummer             String?
+  lovnummerdato         DateTime?
+  retsinformationsurl   String?
+  fremsatundersagid     Int?
+  deltundersagid        Int?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
